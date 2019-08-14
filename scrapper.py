@@ -12,9 +12,14 @@ soup = BeautifulSoup(page.content, 'html.parser')
 #print(soup.prettify())
 
 title = soup.find(id='productTitle').get_text()
-#mrp = soup.find(class='priceBlockStrikePriceString a-text-strike').get_text()
 price = soup.find(id='priceblock_ourprice').get_text()
 
-print("Product title:", title.strip())
-#print("Product M.R.P:", )
-print("Product price:", price[2:8])
+print("Product_title:", title.strip())
+
+# # (,) remove code..
+#abc = "45,520"
+#xyz = abc.replace(',','')
+#print(xyz)
+price = price.replace(',','')
+price = int(price[2:7])
+print("Product_price:", price)
