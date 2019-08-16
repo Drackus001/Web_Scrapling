@@ -10,7 +10,8 @@
 
 <body>
     <h2>working..</h2>
-    <form action="POST">
+    <form method="POST">
+        {% csrf_token %}
         {{ form }}
         <button>run script</button>
     </form>
