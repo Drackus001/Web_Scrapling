@@ -3,10 +3,12 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 import time
+from .forms import MyForm
 
 def home(request):
+    form = MyForm()
 
-    return render(request, 'home.html')
+    return render(request, 'home.html',{'form': form})
 
 
 def output(request):
